@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="./index.html">welcome</a></li>
+            <li><a href="#profile">profile</a></li>
+            <li><a href="#resume">resume</a></li>
+            <li><a href="./portfolio.html">portfolio</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+    <section id="contact">
+        <h1>Contact</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3379.9686378692177!2d34.771195801424916!3d32.09713328109017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1snemal+te+aviv!5e0!3m2!1sen!2sil!4v1498463097140"
+                width="60%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div id="contact_info">
+            <dl>
+                <dt>Email:</dt>
+                <dd>bla@blabla.com</dd>
+                <dt>Phone:</dt>
+                <dd>123-456-7890</dd>
+            </dl>
+        </div>
+        <form action="index.html" method="get">
+            <label for="name">
+                Your Name
+                <input type="text" name="name" id="name" required>
+            </label>
+            <label for="email">
+                Your Email
+                <input type="email" name="email" id="email" required>
+            </label>
+            <label for="subject">
+                Subject
+                <input type="text" name="subject" id="subject">
+            </label>
+            <label for="msg">
+                How can I help you?
+                <textarea name="msg" id="msg"></textarea>
+            </label>
+            <button type="submit">send</button>
+        </form>
+    </section>
+</div>
+</body>
+</html>

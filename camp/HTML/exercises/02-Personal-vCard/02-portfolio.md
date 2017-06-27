@@ -18,4 +18,6 @@ Requirements
   - Should have a caption (the thing on hover, just the HTML of it)
   - Show some text if the image URL is broken (also important for Accessibility) 
   - **Bonus:** What is the most appropriate HTML to describe an image with a caption?
-  - **Bonus2:** On image hover, show a small tooltip with the caption (HTML only)
+  - **Bonus:** On image hover, show a small tooltip with the caption (HTML only)
+- **Bonus** Clicking the filters should update the URL to indicate the selected filter
+  - e.g. `#/filter/Mock-Up`
