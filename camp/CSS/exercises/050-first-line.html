@@ -6,7 +6,9 @@
     and a pseudo element to give the first line a `font-weight` of `bold`
   */
 
-  p {}
+  p:first-child::first-line {
+    font-weight: bold;
+  }
 </style>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus repellendus, laborum fugiat sequi cupiditate voluptatibus optio dolore laudantium eveniet numquam laboriosam dolor esse inventore at officiis adipisci iure quia vel.</p>
