@@ -6,7 +6,7 @@
   <title>Sprite</title>
 
   <style>
-    button {
+    .b1 {
       border: 1px solid grey;
       font-size: 20px;
       height: 32px;
@@ -14,8 +14,21 @@
       padding-right:40px;
     }
 
-    button:hover {
+    .b1:hover {
       background-image: url('./assets/bg-sprite/arrow-right-blue.png');
+    }
+
+    .b2 {
+      border: 1px solid grey;
+      font-size: 20px;
+      height: 32px;
+      background: lightblue url('./assets/bg-sprite/spritesheet.png') no-repeat top right;
+      background-size: auto 200%;
+      padding-right:40px;
+    }
+
+    .b2:hover {
+      background-position: bottom right;
     }
   </style>
 
@@ -23,7 +36,8 @@
 
 <body>
 
-  <button>Go to next page</button>
+  <button class="b1">Go to next page</button>
+  <button class="b2">Go to next page</button>
 
 </body>
 
