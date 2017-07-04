@@ -10,22 +10,89 @@
   }
 
   .poland {
-    width: 160px;
-    height: 50px;
+    width: 180px;
+    height: 60px;
     background-color: white;
-    border-bottom: 50px solid #ff0000;
+    border-bottom: 60px solid #ff0000;
   }
 
   /* Build the rest of the flags using the border property */
   /* DON'T TOUCH THE HTML */
 
-  .france {}
+  .france {
+    width: 60px;
+    height: 100px;
+    background-color: white;
+    border-right: 60px solid red;
+    border-left: 60px solid blue;
+  }
 
-  .italy {}
+  .italy {
+    width: 60px;
+    height: 100px;
+    background-color: white;
+    border-right: 60px solid red;
+    border-left: 60px solid green;
+  }
 
-  .colombia {}
+  .colombia {
+    width: 180px;
+    height: 30px;
+    background-color: darkblue;
+    border-top: 60px solid yellow;
+    border-bottom: 30px solid red;
+  }
 
-  .romania {}
+  .romania {
+    width: 60px;
+    height: 100px;
+    background-color: yellow;
+    border-right: 60px solid red;
+    border-left: 60px solid darkblue;
+  }
+
+  .czech-republic {
+    width: 90px;
+    height: 0;
+    border-top: 60px solid white;
+    border-left: 90px solid darkblue;
+    border-bottom: 60px solid red;
+  }
+
+  /*.czech-republic {*/
+  /*width: 180px;*/
+  /*height: 60px;*/
+  /*background-color: white;*/
+  /*border-bottom: 60px solid #ff0000;*/
+  /*}*/
+
+  /*.czech-republic::before {*/
+    /*display: block;*/
+    /*content: "";*/
+    /*width: 0;*/
+    /*height: 0;*/
+    /*border-top: 60px solid transparent;*/
+    /*border-left: 90px solid darkblue;*/
+    /*border-bottom: 60px solid transparent;*/
+  /*}*/
+
+  .costa-rica {
+    width: 180px;
+    height: 100px;
+    background-color: darkblue;
+    padding-top: 20px;
+  }
+
+  .costa-rica::before {
+    display: block;
+    content: "";
+    background-color: red;
+    width: 180px;
+    height: 40px;
+    border-top: 20px solid white;
+    border-bottom: 20px solid white;
+  }
+
 </style>
 
 <div class="flag poland">&#x1F1F5;&#x1F1F1;</div>
