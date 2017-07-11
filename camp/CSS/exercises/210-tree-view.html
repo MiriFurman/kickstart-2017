@@ -27,7 +27,51 @@
 
     .treeview input + label + ul {
       margin: 0 0 0 22px;
+      display: none;
     }
+
+    .treeview input:checked:not(:disabled) + label + ul {
+      display: block;
+    }
+
+    .treeview ul {
+      list-style: none;
+    }
+
+    .treeview input[type=checkbox] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    .treeview input[type=checkbox] + label::before {
+      content: url("./assets/techniques/tree-view-images/folder-closed.png");
+      padding-right: 5px;
+    }
+
+    .treeview input[type=checkbox]:checked + label::before {
+      content: url("./assets/techniques/tree-view-images/folder-open.png");
+      padding-right: 5px;
+    }
+
+    .treeview label {
+      cursor: pointer;
+    }
+
+    .treeview input:disabled + label {
+      cursor: default;
+      opacity: .6;
+    }
+
+    .treeview a[href$=".png"]::before {
+       content: url('./assets/techniques/tree-view-images/document-image.png');
+       padding-right: 5px;
+    }
+
+    .treeview a[href$=".json"]::before {
+      content: url('./assets/techniques/tree-view-images/document-code.png');
+      padding-right: 5px;
+    }
+
 
     /* Bonus */
 

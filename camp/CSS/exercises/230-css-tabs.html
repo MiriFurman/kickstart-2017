@@ -27,8 +27,13 @@
       color: #404040;
     }
 
+    .tabstrip li {
+      width: 600px;
+      height:;
+    }
+
     .tabstrip li > div {
-      top: 33px;
+      top: 40px;
       bottom: 0;
       left: 0;
       width: 100%;
@@ -36,6 +41,8 @@
       overflow: auto;
       background: #fff;
       box-sizing: border-box;
+      display: none;
+      position: absolute;
     }
 
     .tabstrip input[type="radio"] + label {
@@ -45,7 +52,35 @@
       background: #f1f1f1;
       text-align: center;
       cursor: pointer;
+      display: inline-block;
+      border-radius: 6px 6px 0px 0px;
+      border-bottom: white;
+      position: relative;
+      z-index: 2;
     }
+
+    .tabstrip input[type="radio"]:checked + label{
+      background: white;
+    }
+
+    .tabstrip input[type="radio"]:disabled + label {
+      cursor: default;
+      opacity: .6;
+    }
+
+    .tabstrip input[type=radio] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    .tabstrip label {
+      float: left;
+    }
+
+    .tabstrip input[type=radio]:checked ~ div {
+      display: block;
+    }
+
   </style>
 </head>
 

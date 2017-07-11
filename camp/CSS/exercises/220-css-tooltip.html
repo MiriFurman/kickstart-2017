@@ -8,6 +8,41 @@
     /* the tooltip will be applied to any element, containing data-title attribute */
     /* the tooltip */
     /* the pointer */
+
+    [data-title] {
+      position: relative;
+    }
+
+    [data-title]::after {
+      display: none;
+      content: attr(data-title);
+      background-color: black;
+      color: white;
+      position: absolute;
+      width: 150px;
+      top: 137%;
+      left: 50%;
+      margin-left: -75px; /*half of width*/
+      padding: 5px;
+      border-radius: 6px;
+    }
+
+    [data-title]::before {
+      display: none;
+      content: " ";
+      position: absolute;
+      top: 80%;  /* At the top of the tooltip */
+      left: 50%;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent black transparent;
+    }
+
+    [data-title]:hover::after,
+    [data-title]:hover::before {
+      display: inline-block;
+    }
+
   </style>
 
 </head>
