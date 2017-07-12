@@ -62,3 +62,36 @@
     <!--End Pattern HTML-->
   </body>
 </html>
+
+
+<style>
+
+  /* Large screens, desktops and laptops ----------- */
+  @media only screen and (min-width : 768px) {
+    .c {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .c1 {
+      height: 100%;
+      width: 30%;
+      float: left;
+    }
+
+    .c2, .c3 {
+      height: 50%;
+      width: 70%;
+      float: right;
+    }
+  }
+
+  /* Tablets and Smartphones ----------- */
+  @media only screen and (max-width : 768px) {
+    .c {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+</style>

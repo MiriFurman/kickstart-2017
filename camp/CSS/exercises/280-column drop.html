@@ -96,3 +96,58 @@
     <!--End Pattern HTML-->
   </body>
 </html>
+
+<style>
+
+  /* Large screens ----------- */
+  @media only screen and (min-width : 1024px) {
+    .c {
+      display: flex;
+    }
+
+    .sb {
+      order: 1;
+    }
+
+    .main {
+      order: 2;
+    }
+
+    .sb-2 {
+      order: 3;
+    }
+  }
+
+  /* Desktops and laptops ----------- */
+  @media only screen and (min-width : 768px) and (max-width: 1024px) {
+    .c {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .main {
+      width: 70%;
+      order: 1;
+    }
+
+    .sb {
+      width: 30%;
+      order: 2;
+    }
+
+    .sb-2 {
+      order: 3;
+    }
+  }
+
+  /* Tablets and Smartphones ----------- */
+  @media only screen and (max-width : 768px) {
+    .c {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+
+</style>

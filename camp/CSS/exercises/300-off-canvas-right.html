@@ -81,3 +81,84 @@
     <!--End Pattern HTML-->
   </body>
 </html>
+
+<style>
+
+  /* Large screens, desktops and laptops ----------- */
+  @media only screen and (min-width : 768px) {
+    .wrap {
+      max-width: 960px;
+      display: flex;
+      margin: 0 auto;
+      font-size: 2em;
+    }
+
+    .menu-link {
+      display: none;
+    }
+
+    .lorem {
+      order: 0;
+    }
+
+    nav {
+      order: 1;
+      color: white;
+      background-color: grey;
+    }
+
+    p {
+      padding: 0 10px;
+    }
+
+
+
+  }
+
+  /* Tablets and Smartphones ----------- */
+  @media only screen and (max-width : 768px) {
+    .wrap {
+      font-size: 2em;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-link {
+      float: right;
+      display: block;
+      text-decoration: none;
+      color: grey;
+      padding: 1em;
+    }
+
+    nav[role=navigation] {
+      color: white;
+      background-color: grey;
+      clear: both;
+      width: 30%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: -30%;
+    }
+
+    .lorem {
+      clear: both;
+    }
+
+    .menu-link:active .lorem{
+
+    }
+
+    .menu-link:visited {
+      color: red;
+    }
+
+    p {
+      padding: 0 10px;
+    }
+
+
+  }
+
+</style>
