@@ -7,13 +7,155 @@
 
   <style>
 
+    html {
+      height: 100%;
+    }
+
+    body {
+      height: 100%;
+      margin: 0;
+      background: url('assets/css3/cloudy-day/grass.png') repeat-x bottom, linear-gradient(#c9dbe9,#fff) no-repeat;
+    }
+
+    @keyframes animateCloud {
+      0% {
+        transform: translateX(-250px);
+      }
+      100% {
+        transform: translateX(100vw);
+      }
+    }
+
+    .cloud {
+      width: 250px;
+      height: 90px;
+      border-radius: 100px;
+    }
+
+    .cloud,
+    .cloud::after,
+    .cloud::before {
+      background-color: #fff;
+      position: absolute;
+      box-shadow: 0 0 25px 5px white;
+      transition: all 0.1s ease;
+    }
+
+
+    .cloud::after,
+    .cloud::before {
+      content: '';
+      z-index: -1;
+    }
+
+    .cloud::after {
+      width: 70px;
+      height: 70px;
+      top: -40px;
+      left: 45px;
+      border-radius: 100px;
+    }
+
+    .cloud::before {
+      width: 130px;
+      height: 130px;
+      top: -60px;
+      right: 40px;
+      border-radius: 200px;
+    }
+
+    .cloud-wrapper {
+      position: absolute;
+    }
+
+    .cloud-wrapper:hover {
+      animation-play-state: paused;
+    }
+
+    .cloud-wrapper:hover .cloud,
+    .cloud-wrapper:hover .cloud::before,
+    .cloud-wrapper:hover .cloud::after {
+      background: darkslategrey;
+      box-shadow: 0 0 25px 0 darkslategrey;
+    }
+
+    .c1 {
+      opacity: 1;
+      top: 150px;
+      left: 0;
+      animation: animateCloud 12s linear infinite;
+    }
+
+    .c2 {
+      opacity: 0.8;
+      top: 400px;
+      left: 0;
+      animation: animateCloud 15s linear infinite;
+    }
+
+    .c2 .cloud {
+      transform: scale(0.8);
+    }
+
+    .c3 {
+      opacity: 0.7;
+      top: 300px;
+      left: 0;
+      animation: animateCloud 20s linear infinite;
+    }
+
+    .c3 .cloud {
+      transform: scale(0.7);
+    }
+
+    .c4 {
+      opacity: 0.9;
+      top: 250px;
+      left: 0;
+      animation: animateCloud 10s linear infinite;
+    }
+
+    .c4 .cloud {
+      transform: scale(0.9);
+    }
+
+    .c5 {
+      opacity: 0.6;
+      top: 80px;
+      left: 0;
+      animation: animateCloud 17s linear infinite;
+    }
+
+    .c5 .cloud {
+      transform: scale(0.6);
+    }
+
+
   </style>
 </head>
 
 <body>
+<div class="cloud-wrapper c1">
+  <div class="cloud"></div>
+</div>
+<div class="cloud-wrapper c2">
+  <div class="cloud"></div>
+</div>
+<div class="cloud-wrapper c3">
+  <div class="cloud"></div>
+</div>
+<div class="cloud-wrapper c4">
+  <div class="cloud"></div>
+</div>
+<div class="cloud-wrapper c5">
+  <div class="cloud"></div>
+</div>
 
-
-
+<!--<div class="cloud c1"></div>-->
+<!--<div class="cloud c2"></div>-->
+<!--<div class="cloud c3"></div>-->
+<!--<div class="cloud c4"></div>-->
+<!--<div class="cloud c5"></div>-->
 </body>
 
 </html>
