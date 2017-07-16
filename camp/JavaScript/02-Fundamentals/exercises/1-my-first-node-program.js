@@ -4,3 +4,6 @@
 // e.g.
 // John Doe
 // Be everywhere, and nowhere
+
+console.log('Miri Furman');
+console.log('No person, no problem :)');

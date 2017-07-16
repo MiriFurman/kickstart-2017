@@ -21,6 +21,21 @@
   </label>
   <button id='click-me'>Calculate Power</button>
   <script>
+    document.getElementById("click-me").addEventListener("click", function() {
+      let power = document.getElementById('power').value;
+      let divs =  document.getElementsByClassName("output");
+
+      Array.prototype.forEach.call(divs, function(el) {
+        el.innerHTML = Math.pow(el.innerHTML, power);
+      });
+
+      setTimeout(function () {
+        Array.prototype.forEach.call(divs, function(el, i) {
+          el.innerHTML = i+1;
+        });
+      }, 3000);
+
+    }, false);
   </script>
 </body>
 </html>

@@ -3,6 +3,20 @@
  * that two arrays are equal when testing.
  */
 
+function isArrayEqual(array1, array2) {
+  if (array1.length !== array2.length) {
+    return false;
+  }
+
+  for (const i in array1) {
+    if (array1[i] !== array2[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 /**
  * Use Array.map to write the function below that returns an array
  * which is the uppercases all the strings in an array
@@ -12,8 +26,14 @@
  *
  */
 function upperCaseArray(array) {
-
+  return array.map(function (el) {
+    return el.toUpperCase();
+  });
 }
+
+console.log('================= upperCaseArray =================');
+console.log(isArrayEqual(upperCaseArray(['hello', 'world']), ['HELLO', 'WORLD']));
+console.log(isArrayEqual(upperCaseArray([]), []));
 
 /**
  * Use Array.filter to write a function below that returns
@@ -23,8 +43,11 @@ function upperCaseArray(array) {
  *
  */
 function onlyIncludes(array, str) {
-
+  return array.filter(el => el.includes(str));
 }
+
+console.log('================= onlyIncludes =================');
+console.log(isArrayEqual(onlyIncludes(['helloy', 'boy', 'Baby'], 'oy'), ['helloy', 'boy']));
 
 /**
  * Write a function repeat that repeats a call to a function n times.
@@ -34,5 +57,11 @@ function onlyIncludes(array, str) {
  *                                              hi
  */
 function repeat(func, n) {
-
+  for (let i = 0; i < n; i++) {
+    func();
+  }
 }
+
+console.log('================= repeat =================');
+repeat(() => console.log('hi'), 3);
+

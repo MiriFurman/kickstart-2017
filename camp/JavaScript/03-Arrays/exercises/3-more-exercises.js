@@ -4,6 +4,20 @@
  * that two arrays are equal when testing.
  */
 
+function isArrayEqual(array1, array2) {
+  if (array1.length !== array2.length) {
+    return false;
+  }
+
+  for (const i in array1) {
+    if (array1[i] !== array2[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 /**
  * Pushes a value into the array, at the 'index' place.
  *
@@ -17,8 +31,14 @@
  * See why I don't like mutating functions? They are so much clunkier!
  */
 function insertValue(array, index, value) {
-
+  array.splice(index,0,value);
+  return array;
 }
+
+console.log('================= insertValue =================');
+console.log(isArrayEqual(insertValue([4,5,6], 0, 999), [999,4,5,6]));
+console.log(isArrayEqual(insertValue([4,5,6], 2, 999), [4,5,999,6]));
+console.log(isArrayEqual(insertValue([4,5,6], 3, 999), [4,5,6,999]));
 
 /**
  * Same as above, but returns a new array.
@@ -28,8 +48,23 @@ function insertValue(array, index, value) {
  * insertValue([4, 5, 6], 3, 999) => [4, 5, 6, 999]
  */
 function insertValuePure(array, index, value) {
-
+  let newArr;
+  if (index === 0){
+    newArr = [value].concat(array);
+  } else if (index === array.length){
+    newArr = array.concat([value]);
+  } else {
+    let before = array.slice(0,index);
+    let after = array.slice(index,array.length);
+    newArr = before.concat([value],after);
+  }
+  return newArr;
 }
+
+console.log('================= insertValuePure =================');
+console.log(isArrayEqual(insertValuePure([4,5,6], 0, 999), [999,4,5,6]));
+console.log(isArrayEqual(insertValuePure([4,5,6], 2, 999), [4,5,999,6]));
+console.log(isArrayEqual(insertValuePure([4,5,6], 3, 999), [4,5,6,999]));
 
 /**
  * Returns whether an array is sorted.
@@ -39,8 +74,21 @@ function insertValuePure(array, index, value) {
  * isSorted([]) => true
  */
 function isSorted(array) {
-
+  if (array.length <= 1) {
+    return true;
+  }
+  for (let i = 0; i < array.length-1; i++){
+    if (array[i] > array[i+1]) {
+      return false;
+    }
+  }
+  return true;
 }
+
+console.log('================= isSorted =================');
+console.log(isSorted([4, 5, 6]));
+console.log(isSorted([4, 7, 3]));
+console.log(isSorted([]));
 
 /**
  * Returns the cross product of the two vectors.
