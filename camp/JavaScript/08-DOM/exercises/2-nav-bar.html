@@ -9,8 +9,58 @@
     <!-- Dynamic content from JavaScript will go here -->
   </nav>
 
+  <a href="2-nav-bar.html"></a>
+
   <script>
     function buildNavigation(navigation, underThisNode) {
+        const navMainElem = document.createElement('ul');
+
+        navigation.forEach((nav) => {
+            const li = document.createElement('li');
+
+            if (nav.href) {
+              const a = document.createElement('a');
+              a.href = nav.href;
+              a.innerHTML = nav.title;
+              li.appendChild(a);
+            } else {
+              const title = document.createTextNode(nav.title);
+              li.appendChild(title);
+            }
+
+            if(nav.children) {
+              const navSubElem = document.createElement('ul');
+              navSubElem.style.display = 'none';
+
+              nav.children.forEach((subNav) => {
+                const s_li = document.createElement('li');
+
+                if (subNav.href) {
+                  const s_a = document.createElement('a');
+                  s_a.href = subNav.href;
+                  s_a.innerHTML = subNav.title;
+                  s_li.appendChild(s_a);
+                } else {
+                  const s_title = document.createTextNode(subNav.title);
+                  s_li.appendChild(s_title);
+                }
+
+                navSubElem.appendChild(s_li);
+
+              });
+
+              li.appendChild(navSubElem);
+              li.addEventListener('click',(event) => {
+                navSubElem.style.display = navSubElem.style.display === 'none' ? 'block': 'none';
+              });
+
+            }
+
+          navMainElem.appendChild(li);
+
+        });
+
+      underThisNode.appendChild(navMainElem);
 
     }
   </script>

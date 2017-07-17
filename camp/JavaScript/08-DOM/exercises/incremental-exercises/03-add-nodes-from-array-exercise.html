@@ -19,11 +19,16 @@
       "Don't stop me now ('Cause I'm having a good time)",
       "Don't stop me now (Yes I'm havin' a good time)",
       "I don't want to stop at all"
-    ]
+    ];
 
-    // Write your code here.
     function addParagraph(containerElement, paragraphText) {
+      const p = document.createElement('p');
+      p.appendChild(document.createTextNode(paragraphText));
+      containerElement.appendChild(p);
+    }
 
+    for (let i = 0; i < 30; i++) {
+      addParagraph(document.querySelector('main'), paragraphTexts);
     }
   </script>
 </body>

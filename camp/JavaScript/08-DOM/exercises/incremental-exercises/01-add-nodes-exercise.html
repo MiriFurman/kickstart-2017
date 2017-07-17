@@ -11,7 +11,15 @@
 <body>
   <main></main>
   <script>
-    // Write your code here.
+    const mainElem = document.querySelector('main');
+
+    const h1 = document.createElement('h1');
+    h1.appendChild(document.createTextNode('What did I do?'));
+    mainElem.appendChild(h1);
+
+    const p = document.createElement('p');
+    p.appendChild(document.createTextNode('I did it!'));
+    mainElem.appendChild(p);
   </script>
 </body>
 </html>

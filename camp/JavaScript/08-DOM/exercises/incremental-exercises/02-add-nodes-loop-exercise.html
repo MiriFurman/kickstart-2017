@@ -12,10 +12,17 @@
 <body>
   <main></main>
   <script>
-    // Write your code here.
-    function addParagraph(containerElement, paragraphText) {
 
+    function addParagraph(containerElement, paragraphText) {
+      const p = document.createElement('p');
+      p.appendChild(document.createTextNode(paragraphText));
+      containerElement.appendChild(p);
     }
+
+    for (let i = 0; i < 30; i++) {
+      addParagraph(document.querySelector('main'), 'I did it!');
+    }
+
   </script>
 </body>
 </html>

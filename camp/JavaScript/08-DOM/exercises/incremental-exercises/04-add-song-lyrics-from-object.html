@@ -27,14 +27,30 @@
         ]
       };
 
-      // Write your code here.
-      function addSongLyrics(song) {
+      const mainElem = document.querySelector('main');
 
+      function addSongLyrics(song) {
+        addH1(mainElem, song.title);
+        song.text.forEach(function (paragraph) {
+          addParagraph(mainElem, paragraph);
+        });
+
+      }
+
+      function addH1(containerElement, h1Text) {
+        const h1 = document.createElement('h1');
+        h1.appendChild(document.createTextNode(h1Text));
+        containerElement.appendChild(h1);
       }
 
       function addParagraph(containerElement, paragraphText) {
-
+        const p = document.createElement('p');
+        p.appendChild(document.createTextNode(paragraphText));
+        containerElement.appendChild(p);
       }
+
+      addSongLyrics(dontStopMeNowSong);
+
     </script>
   </body>
 </html>

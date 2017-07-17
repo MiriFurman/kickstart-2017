@@ -39,16 +39,38 @@
           "Any way the wind blows doesn't really matter to me, to me."
         ]
       }
-    ]
+    ];
 
-    // Write your code here.
+    const mainElem = document.querySelector('main');
+
+    mainElem.addEventListener('click', (event) => {
+        if (event.target.nodeName === 'H1') {
+            event.target.nextSibling.style.display = event.target.nextSibling.style.display === 'none' ? 'block' : 'none';
+        }
+    });
+
     function addSongLyrics(info) {
-
+      info.forEach((song) => {
+        const h1 = document.createElement('h1');
+        h1.appendChild(document.createTextNode(song.title));
+        const div = document.createElement('div');
+        div.style.display = 'none';
+        song.text.forEach((paragraph) => {
+          addParagraph(div, paragraph);
+        });
+        mainElem.appendChild(h1);
+        mainElem.appendChild(div);
+      });
     }
 
     function addParagraph(containerElement, paragraphText) {
-
+      const p = document.createElement('p');
+      p.innerHTML = paragraphText.replace(/^(\S+)/, '<strong>$1</strong>');
+      containerElement.appendChild(p);
     }
+
+    addSongLyrics(queenSongs);
+
   </script>
 </body>
 </html>
