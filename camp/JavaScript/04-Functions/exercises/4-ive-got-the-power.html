@@ -26,12 +26,12 @@
       let divs =  document.getElementsByClassName("output");
 
       Array.prototype.forEach.call(divs, function(el) {
-        el.innerHTML = Math.pow(el.innerHTML, power);
+        el.textContent = Math.pow(el.textContent, power);
       });
 
       setTimeout(function () {
         Array.prototype.forEach.call(divs, function(el, i) {
-          el.innerHTML = i+1;
+          el.textContent = i+1;
         });
       }, 3000);
 

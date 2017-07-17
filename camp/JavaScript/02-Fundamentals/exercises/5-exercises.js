@@ -13,8 +13,8 @@ function isEven(num) {
 }
 
 console.log('================= isEven =================');
-console.log(isEven(5)); //false
-console.log(isEven(896)); //true
+console.assert(isEven(5) === false);
+console.assert(isEven(896) === true);
 
 /**
  * Write a function that checks whether a number is odd or not. Use isEven.
@@ -27,8 +27,8 @@ function isOdd(num) {
 }
 
 console.log('================= isOdd =================');
-console.log(isOdd(5)); //true
-console.log(isOdd(896)); //false
+console.assert(isOdd(5) === true);
+console.assert(isOdd(896) === false);
 
 /**
  * returns true if n is inside the range rangeStart.. rangeEnd
@@ -45,10 +45,10 @@ function insideOf(n, rangeStart, rangeEnd, inclusive) {
 }
 
 console.log('================= insideOf =================');
-console.log(insideOf(2,1,3,true)); //false
-console.log(insideOf(2,1,3,false)); //true
-console.log(insideOf(3,1,3,true)); //true
-console.log(insideOf(4,1,3,false)); //false
+console.assert(insideOf(2,1,3,true) === false);
+console.assert(insideOf(2,1,3,false) === true);
+console.assert(insideOf(3,1,3,true) === true);
+console.assert(insideOf(4,1,3,false) === false);
 
 /**
  * returns true if n is outside the range rangeStart.. rangeEnd
@@ -65,10 +65,10 @@ function outsideOf(n, rangeStart, rangeEnd, inclusive) {
 }
 
 console.log('================= outsideOf =================');
-console.log(outsideOf(3,1,3,true)); //false
-console.log(outsideOf(3,1,3,false)); //true
-console.log(outsideOf(2,1,3,true)); //false
-console.log(outsideOf(4,1,3,false)); //true
+console.assert(outsideOf(3,1,3,true) === false);
+console.assert(outsideOf(3,1,3,false) === true);
+console.assert(outsideOf(2,1,3,true) === false);
+console.assert(outsideOf(4,1,3,false) === true);
 
 /**
  * Write a function that translates the words "hello", "goodbye", "spanish"
@@ -92,10 +92,10 @@ function translate(word, language) {
 }
 
 console.log('================= translate =================');
-console.log(translate('hello', 'french')); //bonjour
-console.log(translate('goodbye', 'english')); //goodbye
-console.log(translate('spanish', 'spanish')); //español
-console.log(translate('bla', 'french')); //sorry
+console.assert(translate('hello', 'french') === 'bonjour');
+console.assert(translate('goodbye', 'english') === 'goodbye');
+console.assert(translate('spanish', 'spanish') === 'español');
+console.assert(translate('bla', 'french') === 'sorry');
 
 
 /**
@@ -149,12 +149,12 @@ function timeOfDay(hours, minutes) {
 }
 
 console.log('================= timeOfDay =================');
-console.log(timeOfDay(7,30)); //morning
-console.log(timeOfDay(11,30)); //noon
-console.log(timeOfDay(14,45)); //afternoon
-console.log(timeOfDay(17,1)); //evening
-console.log(timeOfDay(23,0)); //night
-console.log(timeOfDay(25,0)); //Invalid time
+console.assert(timeOfDay(7,30) === 'morning');
+console.assert(timeOfDay(11,30) === 'noon');
+console.assert(timeOfDay(14,45) === 'afternoon');
+console.assert(timeOfDay(17,1) === 'evening');
+console.assert(timeOfDay(23,0) === 'night');
+console.assert(timeOfDay(25,0) === 'Invalid time');
 
 /**
  * Write a program that receives the three grades the student got.
@@ -168,8 +168,8 @@ function didStudentPass(gradeA, gradeB, gradeC) {
 }
 
 console.log('================= didStudentPass =================');
-console.log(didStudentPass(60,70,80)); //true
-console.log(didStudentPass(40,50,60)); //false
+console.assert(didStudentPass(60,70,80) === true);
+console.assert(didStudentPass(40,50,60) === false);
 
 
 /**
@@ -194,9 +194,9 @@ function reverseTwoDigitNumber(n) {
 }
 
 console.log('================= reverseTwoDigitNumber =================');
-console.log(reverseTwoDigitNumber(3)); //30
-console.log(reverseTwoDigitNumber(34)); //43
-console.log(reverseTwoDigitNumber(0)); //0
+console.assert(reverseTwoDigitNumber(3) === 30);
+console.assert(reverseTwoDigitNumber(34) === 43);
+console.assert(reverseTwoDigitNumber(0) === 0);
 
 /**
  * Bonus:
@@ -216,7 +216,7 @@ function reverseThreeDigitNumber(n) {
 }
 
 console.log('================= reverseThreeDigitNumber =================');
-console.log(reverseThreeDigitNumber(3)); //300
-console.log(reverseThreeDigitNumber(34)); //430
-console.log(reverseThreeDigitNumber(345)); //543
-console.log(reverseThreeDigitNumber(0)); //0
+console.assert(reverseThreeDigitNumber(3) === 300);
+console.assert(reverseThreeDigitNumber(34) === 430);
+console.assert(reverseThreeDigitNumber(345) === 543);
+console.assert(reverseThreeDigitNumber(0) === 0);

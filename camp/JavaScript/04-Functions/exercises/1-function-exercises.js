@@ -32,8 +32,8 @@ function upperCaseArray(array) {
 }
 
 console.log('================= upperCaseArray =================');
-console.log(isArrayEqual(upperCaseArray(['hello', 'world']), ['HELLO', 'WORLD']));
-console.log(isArrayEqual(upperCaseArray([]), []));
+console.assert(isArrayEqual(upperCaseArray(['hello', 'world']), ['HELLO', 'WORLD']) === true);
+console.assert(isArrayEqual(upperCaseArray([]), []) === true);
 
 /**
  * Use Array.filter to write a function below that returns
@@ -47,7 +47,7 @@ function onlyIncludes(array, str) {
 }
 
 console.log('================= onlyIncludes =================');
-console.log(isArrayEqual(onlyIncludes(['helloy', 'boy', 'Baby'], 'oy'), ['helloy', 'boy']));
+console.assert(isArrayEqual(onlyIncludes(['helloy', 'boy', 'Baby'], 'oy'), ['helloy', 'boy']) === true);
 
 /**
  * Write a function repeat that repeats a call to a function n times.

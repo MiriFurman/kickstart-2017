@@ -36,9 +36,9 @@ function insertValue(array, index, value) {
 }
 
 console.log('================= insertValue =================');
-console.log(isArrayEqual(insertValue([4,5,6], 0, 999), [999,4,5,6]));
-console.log(isArrayEqual(insertValue([4,5,6], 2, 999), [4,5,999,6]));
-console.log(isArrayEqual(insertValue([4,5,6], 3, 999), [4,5,6,999]));
+console.assert(isArrayEqual(insertValue([4,5,6], 0, 999), [999,4,5,6]) === true);
+console.assert(isArrayEqual(insertValue([4,5,6], 2, 999), [4,5,999,6]) === true);
+console.assert(isArrayEqual(insertValue([4,5,6], 3, 999), [4,5,6,999]) === true);
 
 /**
  * Same as above, but returns a new array.
@@ -48,23 +48,13 @@ console.log(isArrayEqual(insertValue([4,5,6], 3, 999), [4,5,6,999]));
  * insertValue([4, 5, 6], 3, 999) => [4, 5, 6, 999]
  */
 function insertValuePure(array, index, value) {
-  let newArr;
-  if (index === 0){
-    newArr = [value].concat(array);
-  } else if (index === array.length){
-    newArr = array.concat([value]);
-  } else {
-    let before = array.slice(0,index);
-    let after = array.slice(index,array.length);
-    newArr = before.concat([value],after);
-  }
-  return newArr;
+  return array.slice(0,index).concat(value, array.slice(index,array.length));
 }
 
 console.log('================= insertValuePure =================');
-console.log(isArrayEqual(insertValuePure([4,5,6], 0, 999), [999,4,5,6]));
-console.log(isArrayEqual(insertValuePure([4,5,6], 2, 999), [4,5,999,6]));
-console.log(isArrayEqual(insertValuePure([4,5,6], 3, 999), [4,5,6,999]));
+console.assert(isArrayEqual(insertValuePure([4,5,6], 0, 999), [999,4,5,6]) === true);
+console.assert(isArrayEqual(insertValuePure([4,5,6], 2, 999), [4,5,999,6]) === true);
+console.assert(isArrayEqual(insertValuePure([4,5,6], 3, 999), [4,5,6,999]) === true);
 
 /**
  * Returns whether an array is sorted.
@@ -86,9 +76,9 @@ function isSorted(array) {
 }
 
 console.log('================= isSorted =================');
-console.log(isSorted([4, 5, 6]));
-console.log(isSorted([4, 7, 3]));
-console.log(isSorted([]));
+console.assert(isSorted([4, 5, 6]) === true);
+console.assert(isSorted([4, 7, 3]) === false);
+console.assert(isSorted([]) === true);
 
 /**
  * Returns the cross product of the two vectors.
@@ -97,8 +87,15 @@ console.log(isSorted([]));
  * crossProduct([2, 4], [5, 8]) ==> 10 + 32 = 42
  */
 function crossProduct(vec1, vec2) {
-
+  let sum = 0;
+  for (let i = 0; i < vec1.length; i++) {
+    sum += vec1[i] * vec2[i];
+  }
+  return sum;
 }
+
+console.log('================= crossProduct =================');
+console.assert(crossProduct([2, 4], [5, 8]) === 42);
 
 /**
  * Bonus:
@@ -110,8 +107,16 @@ function crossProduct(vec1, vec2) {
  * unique([]) ==> []
  */
 function unique(array) {
-
+  return array.filter(function (value, index, self) {
+    return self.indexOf(value) === index;
+  })
 }
+
+console.log('================= unique =================');
+console.assert(isArrayEqual(unique([4, 5, 1]), [4, 5, 1]) === true);
+console.assert(isArrayEqual(unique([4, 5, 5, 4, 1, 5]), [4, 5, 1]) === true);
+console.assert(isArrayEqual(unique([]), []) === true);
+
 
 /**
  * Bonus:
@@ -126,8 +131,17 @@ function unique(array) {
  * sameMembers([], []) ==> true
  */
 function sameMembers(array1, array2) {
-
+  return isArrayEqual(array1.sort(), array2.sort());
 }
+
+console.log('================= sameMembers =================');
+console.assert(sameMembers([1, 2, 3], [3, 1, 2]) === true);
+console.assert(sameMembers([1, 2, 3, 4], [3, 1, 2]) === false);
+console.assert(sameMembers([1, 2, 3, 4], [3, 1, 2]) === false);
+console.assert(sameMembers([1, 2, 3, 3], [3, 1, 2, 3]) === true);
+console.assert(sameMembers([1, 2, 3, 3], [3, 1, 2]) === false);
+console.assert(sameMembers([], []) === true);
+
 
 /**
  * Bonus:
@@ -137,5 +151,21 @@ function sameMembers(array1, array2) {
  * mergeSorted([1, 5, 7], [2, 3, 6, 7, 8]) ==> [1, 2, 3, 5, 6, 7, 7, 8]
  */
 function mergeSorted(array1, array2) {
-
+  let res = [];
+  let i = 0;
+  let j = 0;
+  while (i < array1.length && j < array2.length) {
+    if (array1[i] <= array2[j]) {
+      res.push(array1[i]);
+      i++
+    } else {
+      res.push(array2[j]);
+      j++;
+    }
+  }
+  return res.concat(array1.slice(i)).concat(array2.slice(j));
 }
+
+console.log('================= mergeSorted =================');
+console.assert(isArrayEqual(mergeSorted([1, 5, 7], [2, 3, 6, 7, 8]), [1, 2, 3, 5, 6, 7, 7, 8]) === true);
+

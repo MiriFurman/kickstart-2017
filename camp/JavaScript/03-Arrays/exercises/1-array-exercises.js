@@ -33,8 +33,8 @@ function sum(array) {
 }
 
 console.log('================= sum =================');
-console.log(sum([4, 5, 6])); //15
-console.log(sum([])); //0
+console.assert(sum([4, 5, 6]) === 15);
+console.assert(sum([]) === 0);
 
 /**
  * Returns the average of an array. Use sum function above.
@@ -52,9 +52,9 @@ function average(array) {
 }
 
 console.log('================= average =================');
-console.log(average([4, 5, 6])); //5
-console.log(average([4])); //4
-console.log(average([])); //0
+console.assert(average([4, 5, 6]) === 5);
+console.assert(average([4]) === 4);
+console.assert(average([]) === 0);
 
 /**
  * Returns an array that does not contain the value.
@@ -67,8 +67,8 @@ function removeValue(array, value) {
 }
 
 console.log('================= removeValue =================');
-console.log(isArrayEqual(removeValue([4, 5, 6, 4, 3], 4), [5, 6, 3]));
-console.log(isArrayEqual(removeValue([4, 4, 4], 4), []));
+console.assert(isArrayEqual(removeValue([4, 5, 6, 4, 3], 4), [5, 6, 3]) === true);
+console.assert(isArrayEqual(removeValue([4, 4, 4], 4), []) === true);
 
 /**
  * receives an array whose elements are also arrays. Returns an array with the
@@ -83,6 +83,6 @@ function flatten(arrayOfArrays) {
 }
 
 console.log('================= flatten =================');
-console.log(isArrayEqual(flatten([[1, 2], [4, 3]]), [1, 2, 4, 3]));
-console.log(isArrayEqual(flatten([[1, 2], []]), [1, 2]));
-console.log(isArrayEqual(flatten([[]]), []));
+console.assert(isArrayEqual(flatten([[1, 2], [4, 3]]), [1, 2, 4, 3]) === true);
+console.assert(isArrayEqual(flatten([[1, 2], []]), [1, 2]) === true);
+console.assert(isArrayEqual(flatten([[]]), []) === true);
