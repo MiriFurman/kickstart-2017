@@ -66,9 +66,7 @@ A list of items, where each line represents stock's data.
 * Up/Down arrows (should **not** be displayed in Filter mode) 
 
 #### Behavior
-
 * Remove stock button should appear only in edit mode
-
 * The `Daily Change` should toggle on click:
 - Change in percentage (+0.15%)
 - Change in value (+0.01)
@@ -84,12 +82,10 @@ A list of items, where each line represents stock's data.
 
 #### Behavior 
 * By default, this panel is collapsed and opens when clicking on the filter button in the header.
-
 * Filter the stocks by the following criteria:
 - By Symbol/Name: a single input that filters on both symbol and name (at least one must be satisfied to display the stock).
 - By Trend: A select box, selecting between All/Losing/Gaining.
 - By Price Range: From __ To __ (daily percentage).
-
 * Filters will be reflected when clicking the Apply button.
 
 ## Add Stocks Page
@@ -101,6 +97,7 @@ Search for new stocks to add by their name or symbol
 * Cancel Button
 
 #### Behavior
+* Search should be applied when clicking "enter" on you keyboard".
 * Cancel button should navigate back to the stocks list page.
 
 ### Empty View
