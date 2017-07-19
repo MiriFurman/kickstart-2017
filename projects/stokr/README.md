@@ -31,7 +31,7 @@ There are two screens needs to be implemented - "Stocks List" and "Add Stocks".
 ## Assets And Mock-ups
 Relevant SVG assets are supplied under the `assets` folder.
 
-You can find all design mock ups [here](https://zpl.io/Z2wuNsg). Here's an example:
+You can find all design mock ups [here](http://zpl.io/Z29OCX1). Here's an example:
 
 <p align="center">
   <img width="350" src="assets/images/stokr.png"/>
@@ -51,7 +51,7 @@ Display a list of selected stocks and their data from the portfolio.
 #### Behavior:
 * The search button changes the view to the Add Stocks view.
 * The settings button toggles between Edit/View modes (more below).
-* The filter button opens/closes a small section to filter visible stocks (more below). 
+* The filter button opens/closes a small panel to filter visible stocks (more below). 
 * The refresh button updates the stocks data.
 
 ### List of Stocks
@@ -77,13 +77,13 @@ A list of items, where each line represents stock's data.
 * The Up/Down arrows decides the order of the displayed stock.
 
 
-### Filter Section
+### Filter Panel
 #### Components
 * Filter inputs
 * Apply button
 
 #### Behavior 
-* By default, this section is collapsed and opens when clicking on the filter button in the header.
+* By default, this panel is collapsed and opens when clicking on the filter button in the header.
 
 * Filter the stocks by the following criteria:
 - By Symbol/Name: a single input that filters on both symbol and name (at least one must be satisfied to display the stock).
