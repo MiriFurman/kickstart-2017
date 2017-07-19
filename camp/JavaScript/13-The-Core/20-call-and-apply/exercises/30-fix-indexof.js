@@ -13,7 +13,7 @@ const anArrayLikeObj = {
  * Fix the following function
  */
 function getIndex(search) {
-  return anArrayLikeObj.indexOf(search);
+  return Array.prototype.indexOf.call(anArrayLikeObj, search);
 }
 
 /**

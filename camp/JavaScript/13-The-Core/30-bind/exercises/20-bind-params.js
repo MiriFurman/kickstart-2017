@@ -8,7 +8,7 @@ const context = {
 };
 
 function getResult(greeting) {
-  // Your code here
+  return getFullName.bind(context, greeting);
 }
 
 /**

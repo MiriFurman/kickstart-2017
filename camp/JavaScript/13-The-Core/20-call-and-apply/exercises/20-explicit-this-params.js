@@ -6,7 +6,7 @@ function identify(country, age) {
  * Write the code to get the result below
  */
 function getResult() {
-  // Your code here
+  return identify.call('John Doe', 'USA', 47);
 }
 
 /**

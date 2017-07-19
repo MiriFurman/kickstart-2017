@@ -7,6 +7,13 @@ function getFullName() {
  */
 function getResult() {
   // Your code here
+  var person = {
+    firstName: 'John',
+    lastName: 'Doe',
+  };
+
+  return getFullName.call(person);
+
 }
 
 /**

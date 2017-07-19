@@ -4,7 +4,11 @@
  * You should use `forEach` instead of a regular for loop
  */
 function sum() {
-  // Your code here
+  let sum = 0;
+  Array.prototype.forEach.call(arguments, (arg) => {
+    sum += arg;
+  });
+  return sum;
 }
 
 /**
