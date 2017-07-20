@@ -18,8 +18,9 @@ Rectangle.prototype.area = function () {
  */
 
 function Square(width) {
-  this.width = width;
-  this.height = width;
+  // this.width = width;
+  // this.height = width;
+  return new Rectangle(width,width);
 }
 
 Square.prototype = Object.create(Rectangle.prototype);
