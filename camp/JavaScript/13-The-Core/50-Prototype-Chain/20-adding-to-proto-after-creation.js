@@ -13,7 +13,6 @@ User.prototype.getName = function () {
 };
 
 console.log(john.getName());
-console.log(john.counter);
 // John
 console.log(peter.getName());
 // Peter

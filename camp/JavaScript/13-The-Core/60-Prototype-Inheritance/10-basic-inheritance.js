@@ -2,7 +2,7 @@ function Person() { }
 
 function Ninja() { }
 
-// Only this maintains the prototype chain
+// Old school way to extend the prototype chain
 Ninja.prototype = new Person();
 
 const ninja = new Ninja();

@@ -1,4 +1,4 @@
-// ES6
+// ES6 added Classes to make our lives easier
 class Person {
   constructor(name) {
     this.name = name;

@@ -12,7 +12,7 @@ function Food(name, price) {
 
 function Toy(name, price) {
   Product.call(this, name, price);
-  
+
   this.category   = 'toy';
   this.minimumAge = '';
 }
