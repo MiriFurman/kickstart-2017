@@ -3,7 +3,7 @@
  */
 
 function Car(brand) {
-  // Your code here
+  this.brand = brand;
 }
 
 

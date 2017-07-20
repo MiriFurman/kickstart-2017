@@ -3,7 +3,11 @@
  */
 
 function Car(brand) {
-  // your code here
+  this.brand = brand;
+
+  this.getBrand = function () {
+    return this.brand;
+  };
 }
 
 const beemer = new Car('BMW');

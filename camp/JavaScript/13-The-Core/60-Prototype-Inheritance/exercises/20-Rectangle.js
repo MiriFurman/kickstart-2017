@@ -17,7 +17,12 @@ Rectangle.prototype.area = function () {
  * 2. Inherit from Rectangle
  */
 
+function Square(width) {
+  this.width = width;
+  this.height = width;
+}
 
+Square.prototype = Object.create(Rectangle.prototype);
 
 // width and height are equal in a square.
 const square = new Square(4);

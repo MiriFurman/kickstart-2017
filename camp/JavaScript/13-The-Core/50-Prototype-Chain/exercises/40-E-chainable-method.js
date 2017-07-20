@@ -9,7 +9,9 @@ function Car(color) {
 const carA = new Car('red');
 const carB = new Car('blue');
 
-// Your code here
+Car.prototype.changeColor = function (color) {
+  this.color = color;
+};
 
 /**
  * Expected

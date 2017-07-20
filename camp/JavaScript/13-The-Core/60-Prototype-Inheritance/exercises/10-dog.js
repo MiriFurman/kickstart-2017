@@ -11,9 +11,11 @@
  */
 
 
+function Animal() {}
 
-
-
+Animal.prototype.makeSound = function () {
+  return console.log(this.sound);
+};
 
 function Dog() {
   this.sound = 'WOOF';

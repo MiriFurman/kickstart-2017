@@ -8,9 +8,7 @@ function Car(brand, color) {
 }
 
 function AutonomousCar(brand, color, os) {
-  // Improve this code to use Car constructor
-  this.brand = brand;
-  this.color = color;
+  Car.call(this, brand, color);
   this.operatingSystem = os;
 
   this.summarize = function () {

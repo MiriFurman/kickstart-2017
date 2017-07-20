@@ -6,7 +6,9 @@ function Car() {
 
 }
 
-// Your code here
+Car.prototype.isThisACar = function () {
+  return 'I am a Car';
+};
 
 const myCar = new Car();
 

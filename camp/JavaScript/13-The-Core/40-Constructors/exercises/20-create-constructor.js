@@ -3,7 +3,12 @@
  * This car is a <brand> in the color of <color>
  */
 function Car(brand, color) {
-  // Your code here
+  this.brand = brand;
+  this.color = color;
+
+  this.summarize = function () {
+    return `This car is a ${this.brand} in the color of ${this.color}`;
+  }
 }
 
 const beemer = new Car('BMW', 'blue');
