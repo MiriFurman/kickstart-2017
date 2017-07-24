@@ -1,0 +1,10 @@
+<script src="get-json.js"></script>
+<script>
+  getJSON('story2.json')
+    .then((response) => {
+      console.log('Success!', response);
+    })
+    .catch((error) => {
+      console.log('Failed!', error);
+    });
+</script>

@@ -1,0 +1,27 @@
+<script src="get-json.js"></script>
+
+<body>
+  <script>
+    /**
+     * If fetching story.chapterUrls[0] fails (e.g., http 500 or user is offline),
+     * it'll skip all following success callbacks,
+     * which includes the one in getJSON() which tries to parse the response as JSON,
+     * and also skips the callback that adds chapter1.html to the page.
+     * Instead it moves onto the catch callback. As a result,
+     * "Failed to show chapter" will be added to the page if any of the previous actions failed.
+     */
+
+    getJSON('../jsons/story.json')
+      .then((story) => {
+        // No 6th chapter, so we will fail.
+        return getJSON(story.chapterUrls[6]);
+      })
+      .then((chapter1) => {
+        console.log(chapter1);
+      })
+      .catch(() => {
+        console.log('Failed to show chapter');
+      });
+  </script>
+
+</body>

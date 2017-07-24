@@ -1,0 +1,13 @@
+<script>
+  const xhr = new XMLHttpRequest;
+
+  xhr.onload = function (e) {
+    const data = JSON.parse(e.target.response);
+    console.log(data.text);
+  };
+
+  xhr.open('GET', 'hello.json');
+
+  xhr.send();
+
+</script>

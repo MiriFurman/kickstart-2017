@@ -1,0 +1,31 @@
+<script src="flowchart-functions.js"></script>
+
+<script>
+  /**
+   * Promise rejections skip forward to the next then()
+   * with a rejection callback (or catch(), since it's equivalent).
+   * With then(func1, func2), func1 or func2 will be called, never both.
+   * But with then(func1).catch(func2), both will be called if func1 rejects,
+   * as they're separate steps in the chain. Take the following:
+   */
+
+  asyncThing1()
+    .then(() => asyncThing2())
+    .then(() => asyncThing3())
+    .catch((err) => asyncRecovery1())
+    .then(
+      () => asyncThing4(),
+      (err) => asyncRecovery2()
+    )
+    .catch((err) => {
+      console.log('Don\'t worry about it');
+    })
+    .then(() => {
+      console.log('All done!');
+    });
+
+</script>
+
+<h2>Follow the blue lines for promises that fulfill, or the red for ones that reject.</h2>
+
+<img src="flowchart.png" style="width:500px;" alt="">

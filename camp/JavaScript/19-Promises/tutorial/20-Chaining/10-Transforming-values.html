@@ -1,0 +1,13 @@
+<script src="get-json.js"></script>
+
+<script>
+  get('../jsons/story.json')
+    .then((response) => {
+      // Transforming the string response to a JSON
+      return JSON.parse(response);
+    })
+    .then((response) => {
+      console.log('Yey JSON!', response);
+    });
+
+</script>

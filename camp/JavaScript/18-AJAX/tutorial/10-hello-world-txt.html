@@ -1,0 +1,12 @@
+<script>
+  const xhr = new XMLHttpRequest;
+
+  xhr.onload = function (e) {
+    console.log(e.target.response);
+  };
+
+  xhr.open('GET', 'hello.txt');
+
+  xhr.send();
+
+</script>

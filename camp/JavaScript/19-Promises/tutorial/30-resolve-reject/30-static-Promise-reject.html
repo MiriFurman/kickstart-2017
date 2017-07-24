@@ -1,0 +1,10 @@
+<script>
+  Promise.reject(new Error('fail'))
+    .then((error) => {
+      // not called
+    })
+    .catch((error) => {
+      console.log(error); // Execution Stack Trace
+    });
+
+</script>

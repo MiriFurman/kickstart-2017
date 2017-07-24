@@ -1,0 +1,31 @@
+<script src="get-json.js"></script>
+
+<body>
+  <script>
+    /**
+     * Promise.all takes an array of promises and creates a promise that fulfills
+     * when all of them successfully complete.
+     * You get an array of results (whatever the promises fulfilled to)
+     * in the same order as the promises you passed in.
+     */
+
+    getJSON('../jsons/story.json')
+      .then((story) => {
+        let promiseArr = [];
+
+        for (url of story.chapterUrls) {
+          let promise = getJSON(url);
+          promiseArr.push(promise);
+        }
+
+        return Promise.all(promiseArr);
+      })
+      .then((chapters) => {
+        // Now we have the chapters jsons in order! Loop through…
+        chapters.forEach((chapter) => {
+          console.log(chapter);
+        });
+      });
+  </script>
+
+</body>

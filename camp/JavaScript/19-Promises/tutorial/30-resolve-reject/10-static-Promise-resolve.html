@@ -1,0 +1,8 @@
+<script>
+  Promise.resolve('Success')
+    .then((resolveValue) => {
+      console.log(resolveValue); // "Success"
+    }, (rejectValue) => {
+      // not called
+    });
+</script>

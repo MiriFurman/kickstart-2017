@@ -1,0 +1,15 @@
+<script src="get-json.js"></script>
+
+<script>
+  getJSON('../jsons/story.json')
+    .then((story) => {
+      return getJSON(story.chapterUrls[0]);
+    })
+    .then((chapter1) => {
+      console.log('Got chapter 1!', chapter1);
+    });
+
+  /**
+   * chain then's to run async actions in sequence.
+   */
+</script>

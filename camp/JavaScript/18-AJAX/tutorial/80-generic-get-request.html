@@ -1,0 +1,29 @@
+<script>
+  function get(url, callback) {
+    const xhr = new XMLHttpRequest();
+
+    xhr.addEventListener('load', transferComplete);
+
+    function transferComplete(e) {
+      const contentType = xhr.getResponseHeader('content-type');
+
+      if (contentType.indexOf('application/json') > -1) {
+        callback(JSON.parse(xhr.response));
+      } else {
+        callback(xhr.response);
+      }
+    }
+
+    xhr.open('GET', url);
+    xhr.send();
+  }
+
+  get('hello.json', (response) => {
+    console.log('The response is: ', response);
+  });
+
+  get('hello.txt', (response) => {
+    console.log('The response is: ', response);
+  })
+
+</script>

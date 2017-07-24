@@ -1,0 +1,24 @@
+<script src="get-json.js"></script>
+<script>
+  getJSON('../jsons/story.json')
+    .then((response) => {
+      console.log('Success!', response);
+    })
+    .catch((error) => {
+      console.log('Failed!', error);
+    });
+
+  /**
+   * catch(), it's just sugar for then(undefined, func)
+   * Same as:
+   */
+
+  getJSON('../jsons/story.json')
+    .then((response) => {
+      console.log('Success!', response);
+    })
+    .then(undefined, (error) => {
+      console.log('Failed!', error);
+    });
+
+</script>

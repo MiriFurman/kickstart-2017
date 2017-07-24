@@ -1,0 +1,21 @@
+<script>
+  let myFirstPromise = new Promise((resolve, reject) => {
+    /**
+     * We call resolve(...) when what we were doing async succeeded,
+     * and reject(...) when it failed.
+     * In this example, we use setTimeout(...) to simulate async code.
+     * In reality, you will probably be using something like XHR.
+     */
+    setTimeout(() => {
+      resolve('Success!'); // Yay! Everything went well!
+    }, 250);
+  });
+
+  myFirstPromise.then((successMessage) => {
+    /**
+     * successMessage is whatever we passed in the resolve(...) function above.
+     */
+    console.log('Yay! ' + successMessage);
+  });
+
+</script>
