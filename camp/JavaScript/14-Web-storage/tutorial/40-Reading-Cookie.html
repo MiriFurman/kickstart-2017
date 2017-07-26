@@ -1,5 +1,5 @@
 <script>
-  var allcookies = document.cookie;
+  const allcookies = document.cookie;
   console.log("All Cookies : " + allcookies);
 
   // Get all the cookies pairs in an array
@@ -7,8 +7,8 @@
 
   // Now take key value pair out of this array
   for (cookie of cookiearray) {
-    name = cookie.split('=')[0];
-    value = cookie.split('=')[1];
+    const name = cookie.split('=')[0];
+    const value = cookie.split('=')[1];
 
     console.log("Key is : " + name + " Value is : " + value);
   }

@@ -1,12 +1,13 @@
 <script>
   function WriteCookie() {
-    if (document.myform.customer.value == "") {
+    if (document.myform.customer.value === "") {
       alert("Enter some value!");
       return;
     }
 
-    cookievalue = escape(document.myform.customer.value) + ";";
+    const cookievalue = escape(document.myform.customer.value) + ";";
     document.cookie = "name=" + cookievalue;
+
     console.log("Setting Cookies : " + "name=" + cookievalue);
   }
 
