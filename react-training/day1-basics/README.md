@@ -66,6 +66,7 @@ Add a new prop to our cancas from #6, `onCellClick={handler}` that will receive 
 - https://github.com/asbjornenge/thinking-in-react
 - https://www.youtube.com/watch?v=dflUbuHEITk
 - http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/
+- http://www.mattgreer.org/articles/react-internals-part-one-basic-rendering/
 - Play around with other view libraries; vue.js, preact, [yoyo](https://github.com/maxogden/yo-yo)
 
 
