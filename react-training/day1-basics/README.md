@@ -74,12 +74,10 @@ Add a new prop to our cancas from #6, `onCellClick={handler}` that will receive 
 
 Topics: Component classes, state, setState, state vs props
 
-
 ### Exercises
 
-
 #### 1. Counter
-`<Counter initial={5}/>' -> (-) 5 (+)`
+`<Counter initial={5}/>' -> (-) 5 (+)>`
 
 #### 2. Gallery v2
 Statefull Gallery - Create a component that wraps `<SimpleGallery>` from #4b, and adds a button that `window.prompt`s for a new src and caption, and adds it to the list.
