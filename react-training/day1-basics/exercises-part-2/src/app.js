@@ -1,9 +1,9 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoApp from './components/TodoApp';
+import App from './components/App';
 
 ReactDOM.render(
-  <TodoApp/>,
+  <App/>,
   document.getElementById('root')
 );

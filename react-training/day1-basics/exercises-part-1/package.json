@@ -54,7 +54,9 @@
   "eslintConfig": {
     "extends": "wix/react",
     "rules": {
-      "react/prop-types": 0
+      "react/prop-types": 0,
+      "jsx-quotes": 0,
+      "no-alert": 0
     }
   }
 }
