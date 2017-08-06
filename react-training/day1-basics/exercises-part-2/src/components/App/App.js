@@ -33,13 +33,12 @@ const sandboxData = [
     mandatory: true
   },
   {
-    name: 'Canvas v2',
+    name: 'CanvasV2',
     description: `Change the canvas from #6 so that clicking on each cell will toggle the color (cycling between some colors, i.e. 'red', 'yellow', 'blue', 'orange')`
   },
   {
-    name: 'TodoApp',
-    description: `Change <TodoApp> from #10 so the items are now stateful.
-    You will need to support adding, removing and toggling items (done or undone). Add an input and "add" button to your todo app from , and also make sure that removing items works. Bonus: add a navigation bar that allows users to filter between tasks; "only completed", "only incomplete" and "all". Bonus: add a textual search bar.`,
+    name: 'WorkingTodoApp',
+    description: 'Change <TodoApp> from #10 so the items are now stateful. Add an input and "add" button to your todo app from , and also make sure that removing items works. Bonus: add a navigation bar that allows users to filter between tasks; "only completed", "only incomplete" and "all". Bonus: add a textual search bar.',
     mandatory: true
   }
 ];
