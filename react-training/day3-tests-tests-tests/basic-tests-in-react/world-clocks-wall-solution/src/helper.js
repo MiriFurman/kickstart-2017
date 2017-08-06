@@ -1,10 +1,10 @@
-import _ from 'lodash';
+import forEach from 'lodash/forEach';
 
 export const id = (() => {
-    let counter = 0;
-    return () => ++counter;
+  let counter = 0;
+  return () => ++counter;
 })();
 
 export const bindAll = (context, funcs) => {
-    _.forEach(funcs, f => context[f.name] = f.bind(context));
-}
+  forEach(funcs, f => context[f.name] = f.bind(context));
+};

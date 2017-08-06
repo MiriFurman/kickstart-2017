@@ -7,9 +7,8 @@ import {expect} from 'chai';
 
 describe('Clock Component', () => {
   it('should render the passed Label of the Clock equals to Tel Aviv', () => {
-    let clockLabel = '';
+    const clockLabel = '';
     // create a clock, and set its label to Tel Aviv
     expect(clockLabel).to.eq('Tel Aviv');
   });
 });
-
