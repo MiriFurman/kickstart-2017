@@ -91,7 +91,7 @@ export class CanvasV2 extends React.Component {
 
 const TodoItem = props => {
   const isDone = props.done ? {textDecoration: 'line-through'} : {textDecoration: 'none'};
-  return <div style={isDone}> {props.title} </div>
+  return <div style={isDone} onClick={props.toggleDone}> {props.title} </div>
 };
 
 const SpecialButton = props => {
@@ -111,8 +111,9 @@ const TodoItem2 = props => {
       props.onRemove();
     }
   };
+
   return (<div>
-    <TodoItem title={props.title} done={props.done}/>
+    <TodoItem title={props.title} done={props.done} toggleDone={props.toggleDone}/>
     <SpecialButton children="🗑" onClick={onClick} onSpecialClick={props.onRemove}/>
   </div>);
 };
@@ -137,8 +138,13 @@ export class WorkingTodoApp extends React.Component {
 
   onRemove(index) {
     this.state.items.splice(index,1);
-    this.setState({items: this.state.items,});
+    this.setState({items: this.state.items});
   }
+
+  toggleDone(index) {
+    this.state.items[index].done = !this.state.items[index].done;
+    this.setState({items: this.state.items});
+  };
 
   filterItems(e) {
     this.setState({doneFilter: e.target.value})
@@ -146,6 +152,12 @@ export class WorkingTodoApp extends React.Component {
 
   filterItemsByTitle(e) {
     this.setState({input: e.target.value})
+  }
+
+  getFilteredItems(){
+    return this.state.items
+      .filter(item => this.state.doneFilter === '' || item.done.toString() === this.state.doneFilter)
+      .filter(item => this.state.input === 'all' || item.title.includes(this.state.input));
   }
 
   render() {
@@ -156,10 +168,8 @@ export class WorkingTodoApp extends React.Component {
         <option value="true">Only Completed</option>
         <option value="false">Only Incomplete</option>
       </select>
-      { this.state.items
-        .filter(item => this.state.doneFilter === '' || item.done.toString() === this.state.doneFilter)
-        .filter(item => this.state.input === 'all' || item.title.includes(this.state.input))
-        .map((item,index) => <TodoItem2 title={item.title} done={item.done} onRemove={() => this.onRemove(index)}/>) }
+      { this.getFilteredItems()
+        .map((item,index) => <TodoItem2 title={item.title} done={item.done} onRemove={() => this.onRemove(index)} toggleDone={() => this.toggleDone(index)}/>) }
       <div><button onClick={() => this.onAddItem()}>Add item</button></div>
     </div>);
   }
