@@ -19,6 +19,13 @@
   * All your components need to support PropTypes validations for their props
   * Use CSS Style as you see fit to make your App look great!
 
+## Setup App
+  * Scaffold your application using Yeoman and Wix-JS scaffolding generator.
+    * Make sure you have wix-js Yeoman generator, by installing it in the terminal:
+    ```npm i -g yo generator-wix-js```
+    * Run ```yo wix-js``` in the terminal to scaffold your project.
+  * A second alternative (less preferable) is to use the [create-react-app](https://github.com/facebookincubator/create-react-app)  scaffolding tool.
+
 ## Screenshot / Mock Up
 
 <img src="https://static.wixstatic.com/media/32d4ec_48bef3446fb54928a0c17b6a1a7cf91e~mv2_d_1370_1218_s_2.png/v1/fill/w_1218,h_1082,al_c,usm_0.66_1.00_0.01/32d4ec_48bef3446fb54928a0c17b6a1a7cf91e~mv2_d_1370_1218_s_2.png" width="580px"/>
