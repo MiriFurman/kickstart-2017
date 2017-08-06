@@ -8,4 +8,9 @@ A solution for the World Clocks Wall application exercise, from the 2nd day of R
 
 Run ```yarn``` and ```yarn start``` from the Terminal in order to run the application.
 
+## Running Tests
+
+1. Run ```npm run test:watch``` from the terminal in order to run the tests with a watcher.
+2. Run ```npm test``` from the terminal to run the tests once.
+
 Enjoy
