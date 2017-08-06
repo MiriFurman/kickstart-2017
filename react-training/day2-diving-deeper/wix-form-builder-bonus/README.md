@@ -23,7 +23,7 @@
   * Scaffold your application using Yeoman and Wix-JS scaffolding generator.
     * Make sure you have wix-js Yeoman generator, by installing it in the terminal:
     ```npm i -g yo generator-wix-js```
-    * Run ```yo wix-js``` in the terminal to scaffold your project.
+    * Run ```yo wix-js``` in the terminal to scaffold your project.
   * A second alternative (less preferable) is to use the [create-react-app](https://github.com/facebookincubator/create-react-app)  scaffolding tool.
 
 ## Screenshot / Mock Up
