@@ -8,6 +8,12 @@
   * Create an “Edit” button for every Clock to edit the label
   * Make sure every clock has a fitting Timezone (Israel should be UTC+02:00, while NYC should be UTC-05:00)
  
+## Setup & Project scaffolding
+  * Project should be scaffolded by using Yeoman Wix-JS Generator.
+    * Run in your terminal the following to install Yeoman generator: ```npm i -g yo generator-wix-js``` 
+    * Scaffold your Client project by running in your terminal: ```yo wix-js```
+      * when asked for groupId, enter: "com.wixpress.ks17"
+
 ### Conditions
   * All Components need to have PropTypes validation for their props.
   * Return the focus to the “City Name” input box after clicking the “Add Clock” button.
