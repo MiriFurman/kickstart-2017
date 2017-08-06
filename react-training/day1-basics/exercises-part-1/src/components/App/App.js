@@ -38,7 +38,7 @@ const sandboxData = [
     mandatory: true,
     props: {
       title: 'Bob',
-      subtitle: 'Bobette'
+      subtitle: 'Bobette222'
     }
   },
   {
