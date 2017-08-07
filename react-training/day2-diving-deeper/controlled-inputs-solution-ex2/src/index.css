@@ -1,0 +1,12 @@
+@import './ex2/addressForm.css';
+
+body {
+  margin: 0;
+  padding: 5vw;
+  font-family: sans-serif;
+}
+
+#root {
+  background: #fff;
+  padding: 5vw;
+}

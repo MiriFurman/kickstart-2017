@@ -1,0 +1,24 @@
+{
+    "": [],
+    "United States": [
+        "Austin", "Juno", "Miami", "New-York City", "San Francisco"
+    ],
+    "Israel": [
+        "Jerusalem", "Tel Aviv", "Akko", "Haifa", "Hebron", "Eilat", "Zfat"
+    ],
+    "United Kingdom": [
+        "London", "Manchester", "Kent", "St. Andrews"
+    ],
+    "France": [
+        "Paris", "Nice", "Lyon"
+    ],
+    "Italy": [
+        "Rome", "Milan", "Napoli"
+    ],
+    "Japan": [
+        "Tokyo", "Kyoto"
+    ],
+    "China": [
+        "Beijing", "Pekin", "Chengdu"
+    ]
+}
