@@ -2,9 +2,34 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Item extends Component {
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.value !== nextProps.value;
+  }
+
   render() {
     console.log('Rendering Item', this.props.value);
     return <div>{this.props.value}</div>;
+  }
+}
+
+class ItemList extends Component {
+
+  constructor(props){
+    super(props);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.items !== nextProps.items;
+  }
+
+
+  render() {
+   return (
+     <ul>
+      {this.props.items.map(item => <Item key={item} value={item} />)}
+     </ul>
+   );
   }
 }
 
@@ -39,9 +64,7 @@ class ListApp extends Component {
           <input type="text" value={this.state.userInput} onChange={(e) => this.updateUserInput(e)} />
           <button onClick={e => this.addItem()}>Add</button>
         </div>
-        <ul>
-          {this.state.items.map(item => <Item key={item} value={item} />)}
-        </ul>
+        <ItemList items={this.state.items}/>
       </div>
     );
   }
