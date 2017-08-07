@@ -3,3 +3,13 @@ body {
   padding: 20px;
   font-family: sans-serif;
 }
+
+form {
+  width: 450px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
