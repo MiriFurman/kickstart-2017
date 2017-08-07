@@ -13,14 +13,18 @@ class TodoApp extends Component {
   }
 
   addTask(e) {
-    this.setState({tasks: [Task(this.state.newTask), ...this.state.tasks]});
+    this.setState({
+      tasks: [Task(this.state.newTask), ...this.state.tasks],
+      newTask: ''
+    });
+    this.input.focus();
   }
 
   render() {
     return (
       <div className="todo-app">
         <header>
-          Task:<input type="text" onChange={(e) => this.setState({newTask: e.target.value})}/><button onClick={e => this.addTask(e)}>Add</button>
+          Task:<input type="text" value={this.state.newTask} onChange={(e) => this.setState({newTask: e.target.value})} ref={(input) => this.input = input}/><button onClick={e => this.addTask(e)}>Add</button>
         </header>
         <main>
           <ul>
