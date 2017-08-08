@@ -1,0 +1,7 @@
+{
+  "extends": "wix/react",
+  "rules": {
+    "react/no-find-dom-node": 0,
+    "react/jsx-handler-names": 0
+  }
+}

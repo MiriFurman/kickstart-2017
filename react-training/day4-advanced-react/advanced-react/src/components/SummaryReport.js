@@ -33,7 +33,9 @@ const ActionReport = createReactClass({
         className="action-tooltip" ref={tooltip => {
           this.tooltipElm = tooltip;
         }}
-                                   >I'm a tooltip</div>
+                                   >
+        {'I\'m a tooltip'}
+      </div>
     );
   },
   componentDidUpdate() {
