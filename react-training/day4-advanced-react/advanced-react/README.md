@@ -42,3 +42,23 @@ Create a hoverMixin and use it across the application components:
 * Action reports
 * Footer
 
+### Task 5 - HOC
+Create an HOC called "withProps"   
+``withProps(propsGetter, Component)    
+A HOC that adds the result of propsGetter to the wrapped component.     
+    
+**Arguments**
+* propsGetter(() => addedProps) (_Function_): returns on object that would be added to the wrapped component props
+* A React class to wrap
+
+**Returns**     
+A Wrapped React component class
+    
+**Use your HOC**    
+You are given a component - OddButton.   
+It shows a button that becomes disabled if the day of the month is odd.
+          
+Implement a React component class "OddButtonWithCurrentDate"    
+It should use your withProps to wrap OddButton class (given in the project) so that OddButton gets the current Date in props.   
+
+
