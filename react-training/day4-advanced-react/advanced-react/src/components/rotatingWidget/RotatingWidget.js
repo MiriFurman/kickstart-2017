@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
-import utils from '../utils/utils';
+import utils from '../../utils/utils';
 
 const {getCurrentTime} = utils;
 

@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
 import _ from 'lodash';
-import RotatingWidget from './RotatingWidget';
-import ExpandingWidget from './ExpandingWidget';
+import RotatingWidget from '../rotatingWidget/RotatingWidget';
+import ExpandingWidget from '../expandingWidget/ExpandingWidget';
 
 const WidgetsArea = createReactClass({
   displayName: 'WidgetsArea',

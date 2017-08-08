@@ -1,11 +1,11 @@
 @import "react-custom-scroll/dist/customScroll";
-@import "../Footer.scss";
-@import "../ContactUs.scss";
-@import "../RotatingWidget.scss";
-@import "../ExpandingWidget.scss";
-@import "../ActionReport.scss";
-@import "../ReportArea.scss";
-@import "../WidgetsArea.scss";
+@import "../footer/Footer.scss";
+@import "../contactUs/ContactUs.scss";
+@import "../rotatingWidget/RotatingWidget.scss";
+@import "../expandingWidget/ExpandingWidget.scss";
+@import "../actionReport/ActionReport.scss";
+@import "../reportArea/ReportArea.scss";
+@import "../widgetsArea/WidgetsArea.scss";
 
 button, input {
   font-size: inherit;

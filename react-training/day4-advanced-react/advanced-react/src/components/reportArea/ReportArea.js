@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ActionReport from './ActionReport';
+import ActionReport from '../actionReport/ActionReport';
 import CustomScroll from 'react-custom-scroll';
 
 const ReportArea = props => (

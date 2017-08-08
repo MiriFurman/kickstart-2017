@@ -1,7 +1,7 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
-import ContactUs from './ContactUs';
+import ContactUs from '../contactUs/ContactUs';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 

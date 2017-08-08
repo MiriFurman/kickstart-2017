@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.scss';
-import Footer from '../Footer';
-import WidgetsArea from '../WidgetsArea';
-import ReportArea from '../ReportArea';
+import Footer from '../footer/Footer';
+import WidgetsArea from '../widgetsArea/WidgetsArea';
+import ReportArea from '../reportArea/ReportArea';
 
 const staticBaseUrl = window.__STATICS_BASE_URL__;
 
