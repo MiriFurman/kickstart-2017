@@ -5,7 +5,7 @@ import CustomScroll from 'react-custom-scroll';
 
 const ReportArea = props => (
   <div className="report-area">
-    <CustomScroll>
+    <CustomScroll keepAtBottom={true}>
       <div className="actions-container">
         {props.userActions.map((action, index) => (
           <ActionReport
