@@ -5,7 +5,7 @@ const experiments = {
 };
 
 module.exports = {
-  title: 'Wix Stack React Example Application',
+  title: 'Advanced React - kickstart 2017',
   debug: true,
   experiments: JSON.stringify(experiments),
   locale: 'en',
