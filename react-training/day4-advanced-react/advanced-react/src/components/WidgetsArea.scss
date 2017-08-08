@@ -1,0 +1,10 @@
+.widgets-area {
+  width: calc(50vw - 2px);
+  display: inline-block;
+  border-right: 2px solid blue;
+
+  > .separator {
+    width: 100%;
+    border-bottom: 2px dashed black;
+  }
+}

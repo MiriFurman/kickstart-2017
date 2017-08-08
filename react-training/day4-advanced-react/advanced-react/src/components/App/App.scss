@@ -1,0 +1,45 @@
+@import "react-custom-scroll/dist/customScroll";
+@import "../Footer.scss";
+@import "../ContactUs.scss";
+@import "../RotatingWidget.scss";
+@import "../ExpandingWidget.scss";
+@import "../ActionReport.scss";
+@import "../ReportArea.scss";
+@import "../WidgetsArea.scss";
+
+button, input {
+  font-size: inherit;
+  border-radius: 0;
+  margin: 0 5px;
+}
+
+
+
+.App {
+  text-align: center;
+
+  .main-sections {
+    display: flex;
+  }
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

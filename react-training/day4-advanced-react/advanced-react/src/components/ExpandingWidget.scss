@@ -1,0 +1,28 @@
+@import "shared.scss";
+
+.expanding-widget {
+    width: 100%;
+    height: $widgetSize;
+    display: flex;
+
+    .controls {
+        display: inline-block;
+        line-height: $widgetSize;
+        margin: 0 10px;
+        font-size: 12px;
+    }
+
+    .visual {
+        display: inline-block;
+        width: $widgetSize;
+        position: relative;
+
+        > .expanding-bar {
+            position: absolute;
+            left: 20px;
+            top: calc(50% - 20px);
+            height: 20px;
+            background-color: aqua;
+        }
+    }
+}

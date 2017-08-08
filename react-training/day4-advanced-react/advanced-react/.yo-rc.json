@@ -1,0 +1,9 @@
+{
+  "generator-wix-js": {
+    "promptValues": {
+      "authorName": "Guy Romm",
+      "authorEmail": "guyr@wix.com",
+      "groupId": "com.wixpress.kickstart"
+    }
+  }
+}
