@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
 import utils from '../../utils/utils';
+import constants from '../../constants';
 
 const {getCurrentTime} = utils;
 const minWidth = 10;
@@ -51,7 +52,7 @@ const ExpandingWidget = createReactClass({
 
       setTimeout(() => {
         this.updateWidth(newWidth);
-      }, 50);
+      }, constants.WIDGET_DELAY);
     }
   },
   render() {

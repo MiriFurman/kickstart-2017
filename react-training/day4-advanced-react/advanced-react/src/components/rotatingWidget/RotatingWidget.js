@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
 import utils from '../../utils/utils';
+import constants from '../../constants';
 
 const {getCurrentTime} = utils;
 
@@ -40,7 +41,7 @@ const RotatingWidget = createReactClass({
       const currentAngle = this.state.angle;
       setTimeout(() => {
         this.updateAngle(currentAngle + 5);
-      }, 50);
+      }, constants.WIDGET_DELAY);
     }
   },
   render() {

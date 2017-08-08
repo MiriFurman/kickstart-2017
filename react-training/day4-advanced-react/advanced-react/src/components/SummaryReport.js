@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import {flow, map, uniq} from 'lodash/fp';
 import createReactClass from 'create-react-class';
 
 const ActionReport = createReactClass({
@@ -30,10 +30,11 @@ const ActionReport = createReactClass({
   renderTooltip() {
     return (
       <div
-        className="action-tooltip" ref={tooltip => {
+        className="action-tooltip"
+        ref={tooltip => {
           this.tooltipElm = tooltip;
         }}
-                                   >
+        >
         {'I\'m a tooltip'}
       </div>
     );
@@ -52,8 +53,13 @@ const ActionReport = createReactClass({
     }
   },
   render() {
+    //(this.props.actionsGroup).map('widget').uniq().length
+    const widgetsCount = flow(
+      map('widget'),
+      uniq
+    )(this.props.actionsGroup).length;
     const actionsInfo = {
-      widgetsCount: _(this.props.actionsGroup).map('widget').uniq().length
+      widgetsCount
     };
     return (
       <div className="action-report">

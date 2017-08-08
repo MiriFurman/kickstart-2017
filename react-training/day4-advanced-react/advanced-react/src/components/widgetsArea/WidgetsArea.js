@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
-import _ from 'lodash';
+import {keys, some} from 'lodash/fp';
 import RotatingWidget from '../rotatingWidget/RotatingWidget';
 import ExpandingWidget from '../expandingWidget/ExpandingWidget';
 
@@ -11,7 +11,7 @@ const WidgetsArea = createReactClass({
     reportAction: PropTypes.func.isRequired
   },
   shouldComponentUpdate(nextProps) {
-    return _.some(_.keys(nextProps), key => nextProps[key] !== this.props[key]);
+    return some(key => nextProps[key] !== this.props[key], keys(nextProps));
   },
   render() {
     return (
