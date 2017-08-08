@@ -3,6 +3,7 @@ import './App.scss';
 import Footer from '../footer/Footer';
 import WidgetsArea from '../widgetsArea/WidgetsArea';
 import ReportArea from '../reportArea/ReportArea';
+import constants from '../../constants';
 
 const staticBaseUrl = window.__STATICS_BASE_URL__;
 
@@ -32,7 +33,10 @@ class App extends Component {
           <WidgetsArea reportAction={action => this.reportAction(action)}/>
           <ReportArea userActions={this.state.userActions}/>
         </div>
-        <Footer clearUserActions={clearUserActions}/>
+        <Footer
+          clearUserActions={clearUserActions}
+          transitionDelay={constants.TRANSITION_DURATION}
+          />
       </div>
     );
   }

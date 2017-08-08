@@ -40,7 +40,7 @@ const ExpandingWidget = createReactClass({
     }
   },
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.mouseHover) {
+    if (this.isHovering()) {
       const delta = 10;
       const currentWidth = this.state.width;
       let currentDirection = Math.sign(currentWidth - prevState.width) || 1;

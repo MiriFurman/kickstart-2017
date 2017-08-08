@@ -37,7 +37,7 @@ const RotatingWidget = createReactClass({
     }
   },
   componentDidUpdate() {
-    if (this.state.mouseHover) {
+    if (this.isHovering()) {
       const currentAngle = this.state.angle;
       setTimeout(() => {
         this.updateAngle(currentAngle + 5);

@@ -10,7 +10,8 @@ const Footer = createReactClass({
     return {};
   },
   propTypes: {
-    clearUserActions: PropTypes.func
+    clearUserActions: PropTypes.func.isRequired,
+    transitionDelay: PropTypes.number.isRequired
   },
   handleMouseEnter() {
     this.setState({mouseHover: true});
@@ -22,9 +23,10 @@ const Footer = createReactClass({
     return this.state.mouseHover;
   },
   render() {
+    const isHovering = this.isHovering();
     return (
       <div
-        className={`Footer ${this.state.mouseHover ? 'mouse-over-footer' : ''}`}
+        className={`Footer ${isHovering ? 'mouse-over-footer' : ''}`}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         >
@@ -33,17 +35,17 @@ const Footer = createReactClass({
         </div>
         <ReactCSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={450}
-          transitionLeaveTimeout={450}
+          transitionEnterTimeout={this.props.transitionDelay}
+          transitionLeaveTimeout={this.props.transitionDelay}
           >
           {this.state.mouseHover ? (<div className="contact-container"><ContactUs key="ContactUs"/></div>) : null}
         </ReactCSSTransitionGroup>
         <ReactCSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={450}
-          transitionLeaveTimeout={450}
-          >{this.state.mouseHover ? (<div className="clear-button">
-            <button onClick={this.props.clearUserActions}>Clear Log</button>
+          transitionEnterTimeout={this.props.transitionDelay}
+          transitionLeaveTimeout={this.props.transitionDelay}
+          >{isHovering ? (<div className="clear-button">
+            <button className="clear-actions-button" onClick={this.props.clearUserActions}>Clear Log</button>
           </div>) : null}
         </ReactCSSTransitionGroup>
       </div>
