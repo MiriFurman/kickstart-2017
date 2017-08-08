@@ -20,6 +20,8 @@ export class Utils {
 
 }
 
+//can remove the time to other component
+
 export class ClockItem extends Component {
 
   constructor(props) {
@@ -48,7 +50,7 @@ export class ClockItem extends Component {
     this.setState({editMode: true});
   }
 
-  editClock(){
+  editClock(){ // TODO - 08/08/2017 -  refactor - move to father, remove from state
     this.setState({city: this.input.value ? this.input.value : this.state.city, editMode:false});
   }
 
