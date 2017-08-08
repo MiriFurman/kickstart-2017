@@ -3,7 +3,7 @@
     height: 150px;
     border-top: 2px solid black;
     position: relative;
-    background-color: #aaa;
+    background-color: rgba(34, 103, 230, 0.36);
 
     .footer-content {
         position: absolute;
@@ -24,6 +24,30 @@
         position: absolute;
         top: 50%;
         left: 10%;
+    }
+
+    .clear-button {
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 90px);
+        width: 180px;
+
+        button {
+            border: 10px;
+            cursor: pointer;
+            margin: 0px;
+            padding: 10px;
+            outline: none;
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            border-radius: 2px;
+            box-shadow: none;
+
+            &:hover {
+                background-color: rgba(0,0,0,0.08);
+            }
+        }
     }
 
 

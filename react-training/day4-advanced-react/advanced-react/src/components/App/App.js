@@ -17,6 +17,11 @@ class App extends Component {
   }
 
   render() {
+    const clearUserActions = () => {
+      this.setState({
+        userActions: []
+      });
+    };
     return (
       <div className="App">
         <div className="App-header">
@@ -27,7 +32,7 @@ class App extends Component {
           <WidgetsArea reportAction={action => this.reportAction(action)}/>
           <ReportArea userActions={this.state.userActions}/>
         </div>
-        <Footer/>
+        <Footer clearUserActions={clearUserActions}/>
       </div>
     );
   }
