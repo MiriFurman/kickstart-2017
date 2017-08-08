@@ -1,10 +1,12 @@
+@import "../shared";
+
 .widgets-area {
   width: calc(50vw - 2px);
   display: inline-block;
-  border-right: 2px solid blue;
+  border-right: 2px solid $lightGray;
 
   > .separator {
     width: 100%;
-    border-bottom: 2px dashed black;
+    border-bottom: 2px solid $lightGray;
   }
 }
