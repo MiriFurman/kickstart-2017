@@ -1,39 +1,47 @@
 import React, { Component } from 'react';
-import './App.scss';
+import * as s from './App.scss';
 import {translate} from 'react-i18next';
 import PropTypes from 'prop-types';
 
-class ClockItem extends Component {
+export class Utils {
+
+  static calcTime(offset) {
+    const d = new Date();
+    // convert to msec
+    // subtract local time zone offset
+    // get UTC time in msec
+    const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    // create new Date object for different city
+    // using supplied offset
+    const nd = new Date(utc + (3600000*offset));
+    // return time as a string
+    return nd.toLocaleTimeString();
+  }
+
+}
+
+export class ClockItem extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       editMode: false,
-      time: '',
-      city: props.city,
-      tempName: props.city
+      time: Utils.calcTime(props.timezone),
+      city: props.city
     }
   }
 
   componentDidMount() {
-    this.intervalId = setInterval(() => this.calcTime(this.props.timezone), 1000);
+    this.intervalId = setInterval(() => this.setTime(this.props.timezone), 1000);
   }
 
   componentWillUnmount() {
     clearInterval(this.intervalId);
   }
 
-  calcTime(offset) {
-    const d = new Date();
-    // convert to msec
-    // subtract local time zone offset
-    // get UTC time in msec
-    const utc = d.getTime() - (d.getTimezoneOffset() * 60000);
-    // create new Date object for different city
-    // using supplied offset
-    const nd = new Date(utc + (3600000*offset));
-    // return time as a string
-    this.setState({time: nd.toLocaleTimeString()})
+  setTime(offset) {
+    const time = Utils.calcTime(offset);
+    this.setState({time: time});
   }
 
   editModeOn(){
@@ -48,29 +56,29 @@ class ClockItem extends Component {
   render() {
     if (this.state.editMode) {
       return (
-        <div className="clock-container">
-          <div className="clock-time">{this.state.time}</div>
-          <input className="clock-city-input" type="text" id="city-input" name="city-input" placeholder={this.state.city} ref={(input) => this.input = input}/>
-          <div className="clock-actions">
-            <button className="clock-done-btn" onClick={() => this.editClock()}>Done</button>
+        <div className={s.clockItem}>
+          <div className={s.clockTime}>{this.state.time}</div>
+          <input className={s.clockCityInput} type="text" id="city-input" name="city-input" placeholder={this.state.city} ref={(input) => this.input = input}/>
+          <div>
+            <button className={s.clockDoneBtn} onClick={() => this.editClock()}>Done</button>
           </div>
         </div>
       );
     }
     return (
-      <div className="clock-container">
-        <div className="clock-time">{this.state.time}</div>
-        <div className="clock-city">{this.state.city}</div>
-        <div className="clock-actions">
-          <button className="clock-remove-btn">Remove</button>
-          <button className="clock-edit-btn" onClick={() => this.editModeOn()}>Edit</button>
+      <div className={s.clockItem}>
+        <div className={s.clockTime}>{this.state.time}</div>
+        <div className={s.clockCity}>{this.state.city}</div>
+        <div>
+          <button className={s.clockRemoveBtn} onClick={() => this.props.onRemove()}>Remove</button>
+          <button className={s.clockEditBtn} onClick={() => this.editModeOn()}>Edit</button>
         </div>
       </div>
     );
   }
 }
 
-class ClockList extends Component {
+export class ClockList extends Component {
 
   // shouldComponentUpdate(nextProps, nextState) {
   //   return this.props.clocks !== nextProps.clocks;
@@ -78,8 +86,8 @@ class ClockList extends Component {
 
   render() {
     return (
-      <ul>
-        {this.props.clocks.map(clock => <ClockItem key={clock.id} city={clock.city} timezone={clock.timezone}/>)}
+      <ul className={s.clocksList}>
+        {this.props.clocks.map(clock => <ClockItem key={clock.id} city={clock.city} timezone={clock.timezone} onRemove={() => this.props.removeClock(clock.id)}/>)}
       </ul>
     );
   }
@@ -91,7 +99,8 @@ class App extends Component {
     super();
     this.state = {
       userInput: '',
-      clocks: [{city: 'Jerusalem', timezone: '3', id: '1'}, {city: 'New York', timezone: '-4', id: '2'}]
+      clocks: [{city: 'Jerusalem', timezone: '3', id: '1'}, {city: 'New York City', timezone: '-4', id: '2'},
+        {city: 'London', timezone: '0', id: '3'}, {city: 'Tokyo', timezone: '9', id: '4'}]
     }
   }
 
@@ -102,24 +111,43 @@ class App extends Component {
     }
   }
 
+  removeClock(id) {
+    this.state.clocks = this.state.clocks.filter(clock => clock.id !== id);
+    this.setState({clocks: this.state.clocks});
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className={s.app}>
         <h1>World Clocks</h1>
         <div>
-          Add a Clock
-          <input type="text" placeholder="City Name" ref={(input) => this.inputCity = input}/>
-          <input type="number" name="timezone" placeholder="0" ref={(input) => this.inputTimezone = input}/>
-          <button onClick={() => this.addClock()}>Add Clock</button>
+          <h3>Add a Clock</h3>
+          <form>
+            <input type="text" placeholder="City Name" ref={(input) => this.inputCity = input}/>
+            <label htmlFor="timezone">TimeZone</label>
+            <input type="number" name="timezone" id="timezone" placeholder="0" ref={(input) => this.inputTimezone = input}/>
+            <button onClick={() => this.addClock()}>Add Clock</button>
+          </form>
         </div>
-        <ClockList clocks={this.state.clocks}/>
+        <ClockList clocks={this.state.clocks} removeClock={(id) => this.removeClock(id)}/>
       </div>
     );
   }
 }
 
+ClockItem.propTypes = {
+  city: PropTypes.string.isRequired,
+  timezone: PropTypes.string.isRequired,
+  onRemove: PropTypes.func.isRequired
+};
+
+ClockList.propTypes = {
+  clocks: PropTypes.array.isRequired,
+  removeClock: PropTypes.func.isRequired
+};
+
 App.propTypes = {
-  t: PropTypes.func
+
 };
 
 export default translate(null, {wait: true})(App);

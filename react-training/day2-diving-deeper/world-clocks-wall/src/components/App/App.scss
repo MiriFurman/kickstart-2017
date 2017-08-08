@@ -1,14 +1,51 @@
-.root {
+@font-face{
+  font-family:'digital-clock-font';
+  src: url('./../assets/fonts/digital-7/digital-7.ttf');
+}
+
+.app {
   text-align: center;
 }
 
-.header {
-  background-color: #222;
-  padding: 10px;
-  color: white;
-  font-size: 20pt;
+.clocks-list {
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 20px;
+  width: 680px;
 }
 
-.intro {
-  font-size: 15pt;
+.clock-item {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 160px;
+  margin: 10px;
+}
+
+.clock-time {
+  font-family: digital-clock-font, sans-serif;
+  font-size: 30px;
+}
+
+.clock-city {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.clock-city-input {
+  font-size: 12px;
+  margin: 5px;
+}
+
+.clock-remove-btn {
+  background: #EC827F;
+  color: white;
+}
+
+.clock-edit-btn, .clock-done-btn {
+  color: black;
 }
