@@ -5,8 +5,8 @@ import utils from '../../utils/utils';
 import constants from '../../constants';
 
 const {getCurrentTime} = utils;
-const minWidth = 10;
-const maxWidth = 200;
+const minWidth = constants.EXPANDING.MIN;
+const maxWidth = constants.EXPANDING.MAX;
 const defaultWidth = (maxWidth - minWidth) / 2;
 
 const ExpandingWidget = createReactClass({
