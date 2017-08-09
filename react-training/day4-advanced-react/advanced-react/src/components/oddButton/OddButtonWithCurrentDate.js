@@ -1,13 +1,9 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+import withProps from '../withProps/WithProps';
+import OddButton from './OddButton';
 
-const OddButton = createReactClass({
-  PropTypes: {},
-  render() {
-    return (
-      <div/>
-    );
-  }
-});
+const OddButtonWithCurrentDate = withProps(() => {
+  return {date: new Date()};
+}, OddButton);
 
-export default OddButton;
+export default OddButtonWithCurrentDate;

@@ -3,7 +3,7 @@ import ReactTestUtils from 'react-dom/test-utils';
 import {expect} from 'chai';
 import OddButtonWithCurrentDate from './OddButtonWithCurrentDate';
 
-describe.skip('OddButtonWithCurrentDate', () => {
+describe('OddButtonWithCurrentDate', () => {
 
   const createButton = props => ReactTestUtils.renderIntoDocument(React.createElement(OddButtonWithCurrentDate, props));
 
