@@ -10,7 +10,7 @@ const ActionReport = createReactClass({
       widget: PropTypes.string,
       source: PropTypes.string,
       time: PropTypes.string,
-      value: PropTypes.number
+      value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
     }).isRequired,
     isLast: PropTypes.bool
   },
