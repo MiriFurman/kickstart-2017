@@ -4,6 +4,7 @@ import createReactClass from 'create-react-class';
 import {keys, some} from 'lodash/fp';
 import RotatingWidget from '../rotatingWidget/RotatingWidget';
 import ExpandingWidget from '../expandingWidget/ExpandingWidget';
+import RgbWidget from '../rgbWidget/RgbWidget';
 
 const WidgetsArea = createReactClass({
   displayName: 'WidgetsArea',
@@ -19,6 +20,8 @@ const WidgetsArea = createReactClass({
         <RotatingWidget reportAction={this.props.reportAction}/>
         <div className="separator"/>
         <ExpandingWidget reportAction={this.props.reportAction}/>
+        <div className="separator"/>
+        <RgbWidget reportAction={this.props.reportAction}/>
       </div>);
   }
 });
